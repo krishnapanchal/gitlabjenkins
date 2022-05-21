@@ -1,0 +1,50 @@
+INTEGRATION OF GILAB AUTO BUILD WITH GITLAB PUSH 
+...................................................................................
+                                        JENKINS CONFIGURATION
+        1. install github plugin 
+after installing plugin you can see webhook url in job trigered option
+
+        2.create project >>>>> free style>>>>> select project >>>>> configure >>>> source tab >>>> seletc git and add credential here ( userv name and  pass ecoz repo is private )
+
+       3. in sorce trigered select ( Build when a change is pushed to GitLab. GitLab webhook URL: http://localhost:8080/project/NEWLAB )
+
+       and tick on push select .
+
+      4 . bild envirnment do as you want
+
+
+
+..........................................................................................................
+                                        GITLAB CONFIGURATION
+
+
+
+THRER ARE 2 METHOD FOR THIS 
+                          1. WHEN YOU HAVE JENKINS ID PASSWD ( SETTING >>> INTEGRATION >>> JENKIND >>>>)
+                          2. BY USING JENKINS SECRET KEY ( SETTING >>> WEBHOOK )
+
+
+
+....................................................................................................................
+                                           1. METHOD ( REcommended )
+
+
+1. IN GITLAB >>> SELECT REPO>> SETTING >>>> INTEGRATION>>> JENKINS
+2. ENABLE ACTIVE >>> PUSH EVENT >>>>	 Jenkins server URL (http://192.168.0.246:8080)>>>>USER KRISHNA >>> PASSWD >>> SAVE
+3.TEST CONNECTION 
+4.DONE   
+.....................................................................................................................
+                                          2 . Method 
+
+1. for thid we need to do generate secret key from jeking project
+2. project >>> configure >>> build triger >>> ( . GitLab webhook URL: http://localhost:8080/project/NEWLAB)>>>
+ADVANCE >>>> GENERATE SECTER TOCKEN COPY SAVE
+
+
+
+
+3. NOW IN GITLAB >>>> REPO >>> SETTING >>>> WEBHOOK >>>>>url ( http://192.168.0.246:8080/project/NEWLAB )
+
+  SECRET TOCKET ( PREVIOUS CRETED )>>>>PUSH >>> DISABLE SSL >>> SAVE AND TEST 
+  
+4 done 
